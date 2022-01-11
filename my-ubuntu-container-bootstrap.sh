@@ -26,4 +26,4 @@ npm install -g vtop
 echo " "
 echo "Ferramentas instaladas! Experimente: htop, vtop, atop, nmon!"
 echo " "
-#echo "Rodando as ferramentas!"
+echo "Teste a execução das ferramentas no container criado!"

@@ -27,4 +27,3 @@ echo " "
 echo "Ferramentas instaladas! Experimente: htop, vtop, atop, nmon!"
 echo " "
 #echo "Rodando as ferramentas!"
-#vtop

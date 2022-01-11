@@ -1,0 +1,12 @@
+#Comandos da criacao do conteiner
+
+
+# Comando para criar o conteiner Ubuntu e instalar nele todos as ferramentas necessarias
+clear && sudo docker run -it -d --name my-ubuntu ubuntu &&
+ sudo docker start my-ubuntu &&
+  sudo docker cp my-ubuntu-container-bootstrap.sh my-ubuntu:/my-ubuntu-container-bootstrap.sh &&
+   sudo docker exec -it my-ubuntu ./my-ubuntu-container-bootstrap.sh &&
+    sudo docker exec -it my-ubuntu bash
+
+# Comando para parar e destruir o conteiner
+sudo docker stop my-ubuntu && sudo docker rm my-ubuntu

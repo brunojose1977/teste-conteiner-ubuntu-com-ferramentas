@@ -1,0 +1,31 @@
+#Comandos da criacao do conteiner
+
+
+# Comando para criar o conteiner Ubuntu e instalar nele todos as ferramentas necessarias
+clear && sudo docker run -it -d --name my-ubuntu ubuntu &&
+ sudo docker start my-ubuntu &&
+  sudo docker cp my-ubuntu-container-bootstrap.sh my-ubuntu:/my-ubuntu-container-bootstrap.sh &&
+   sudo docker exec -it my-ubuntu ./my-ubuntu-container-bootstrap.sh &&
+    sudo docker exec -it my-ubuntu bash
+
+
+#Considerando que agora eu tenho uma imagem gerada via Dockerfile que já grava o scriptshell dentro da imagem
+# e também já executa o comando na inicialização do conteiner, logo comando assim:
+
+#Ainda não está funcionando porque o arquivo não foi copiado para dentro do conteiner
+    clear && sudo docker build . &&
+    sudo docker run -it -d --name my-ubuntu ubuntu:18.04 &&
+    sudo docker start my-ubuntu &&
+    sudo docker exec -it my-ubuntu bash
+
+    ## Testando a imagem alpine:3.5
+
+    #Ainda não está funcionando porque o arquivo não foi copiado para dentro do conteiner
+        clear && sudo docker build . &&
+        sudo docker run -it -d --name my-ubuntu alpine:3.5 &&
+        sudo docker start my-ubuntu &&
+        sudo docker exec -it my-ubuntu bash
+
+
+# Comando para parar e destruir o conteiner
+sudo docker stop my-ubuntu && sudo docker rm my-ubuntu
